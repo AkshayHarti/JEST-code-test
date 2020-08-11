@@ -35,3 +35,27 @@ test('should convert a dynamically created object to array', () => {
   // Assert
   expect(actual).toEqual(expected)
 })
+
+test('should return an empty array for null values', () => {
+  // Arrange
+  const input = null
+  const expected = []
+
+  // Act
+  const actual = solution(input)
+
+  // Assert
+  expect(actual).toEqual(expected)
+})
+
+test('should return array with value if value passed is not an object type', () => {
+  // Arrange
+  const input = 100
+  const expected = [100]
+
+  // Act
+  const actual = solution(input)
+
+  // Assert
+  expect(actual).toEqual(expected)
+})
