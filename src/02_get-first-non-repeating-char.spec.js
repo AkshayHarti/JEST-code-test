@@ -27,8 +27,8 @@ test('Test 6 - null value check', () => {
 test('Test 7 - should throw an error when called with an incorrect parameter', () => {
   // Arrange
   const input = ['a', 'b', 'c']
-  const error = new Error('Parameter should be a string')
+  const expected = new Error('Parameter should be a string')
 
   // Assert
-  expect(() => { solution(input) }).toThrow(error)
+  expect(() => { solution(input) }).toThrow(expected)
 })

@@ -75,3 +75,35 @@ test('Test 8 - page -1, 5 items per page', () => {
   // Assert
   expect(actual).toEqual(expected)
 })
+
+test('Test 9 - page 1, 100 items per page', () => {
+  // Arrange
+  const expected = data
+  // Act
+  const actual = solution(1, 100, data)
+  // Assert
+  expect(actual).toEqual(expected)
+})
+
+test('Test 10 - should throw an error on 0 items per page', () => {
+  // Arrange
+  const expected = new Error('Invalid Parameters')
+  // Assert
+  expect(() => { solution(2, 0, data) }).toThrow(expected)
+})
+
+test('Test 11 - should throw an error if array is not provided', () => {
+  // Arrange
+  const expected = new Error('Invalid Parameters')
+  // Assert
+  expect(() => { solution(2, 0, null) }).toThrow(expected)
+})
+
+test('Test 12 - should return null for empty array', () => {
+  // Arrange
+  const expected = null
+  // Act
+  const actual = solution(-1, 5, [])
+  // Assert
+  expect(actual).toEqual(expected)
+})
