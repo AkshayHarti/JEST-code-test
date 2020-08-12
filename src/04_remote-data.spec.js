@@ -10,3 +10,12 @@ test('all users have been accounted for', async () => {
   // Assert
   expect(actual.length).toBe(expected)
 })
+
+test('returned object has a username and completed property', async () => {
+  // Act
+  const actual = await solution()
+
+  // Assert
+  expect(actual[0]).toHaveProperty('username')
+  expect(actual[0]).toHaveProperty('completed')
+})
