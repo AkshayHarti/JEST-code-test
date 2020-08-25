@@ -59,3 +59,15 @@ test('should return array with value if value passed is not an object type', () 
   // Assert
   expect(actual).toEqual(expected)
 })
+
+test('should return array with value that are not null', () => {
+  // Arrange
+  const input = {a: 5, null: null}
+  const expected = [5]
+
+  // Act
+  const actual = solution(input)
+
+  // Assert
+  expect(actual).toEqual(expected)
+})
